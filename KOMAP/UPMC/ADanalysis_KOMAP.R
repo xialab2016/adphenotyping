@@ -8,7 +8,7 @@ library(stringr)
 library(KOMAP)
 library(caret)
 
-source('/n/data1/hsph/biostat/celehs/lab/xix636/KOMAP/new_disease_whole_process/gen_paper_plot/sparse_model_0906/functions.R')
+source('//sparse_model_0906/functions.R')
 path.function = ""
 source(paste0(path.function,"prior_function/PheNorm/FUN_PheNorm_Publish_ZH_Yuri.R"))
 source(paste0(path.function,"prior_function/PheNorm/library_v2.r"))
@@ -29,13 +29,13 @@ source('corrupt_function/other_functions.R')
 ##      Create patient-level codified/utilization and nlp data 
 ##      Take log(x+1) of counts and save to "AD_pt_cod_data.Rdata"
 #############################################################################################
-data.dir = "/n/data1/hsph/biostat/celehs/lab/SHARE/UPMC/AD/data_table/"
-data = read.csv(paste0(data.dir, "data_processed/UPMC_AD_2011_to_2021_Codified+NLP_data_aggregated_2023-03-13.csv"))
+data.dir = "/your_directory/"
+data = read.csv(paste0(data.dir, "/Codified+NLP_data_aggregated.csv"))
 
 unq.features = unique(data$feature_id)
 "AB0000AD" %in% unq.features
 
-freq = read.csv(paste0(data.dir, "data_summary/UPMC_AD_2011_to_2021_Codified+NLP_frequency_summary_with_desc_2023-03-15.csv"))
+freq = read.csv(paste0(data.dir, "/Codified+NLP_frequency_summary.csv"))
 features = c(freq[freq$freq.code > 5, "feature_id"], "AB0000AD")
 
 f.counts.patient = function(dat, v.date, v.nm){
