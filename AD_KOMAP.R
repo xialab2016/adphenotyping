@@ -9,16 +9,16 @@ library(KOMAP)
 library(PheNorm)
 library(dplyr)
 
-setwd("Y:\\") ##tcaisfa2$
+setwd("your_directory") 
 
-cod_ONCE = read.csv("AD\\AD_phenotyping_yunqing\\ONCE\\ONCE_AD_cod_upmc.csv", sep="|")
+cod_ONCE = read.csv("\ONCE\\ONCE_AD_cod_upmc.csv", sep="|")
 cod_ONCE = cod_ONCE[cod_ONCE$high_confidence_level==1,]$Variable
 codify_select = gsub(cod_ONCE, pattern = "\\:", replacement = ".")
 
-NLP_ONCE = read.csv("AD\\AD_phenotyping_yunqing\\ONCE\\ONCE_AD_nlp_upmc.csv", sep="|")
+NLP_ONCE = read.csv("\ONCE\\ONCE_AD_nlp_upmc.csv", sep="|")
 cui_select_weight = NLP_ONCE[NLP_ONCE$high_confidence_level==1,]$cui
 
-all_dat = read.csv("AD\\AD_phenotyping_yunqing\\data quality check\\AD_newdat_0708.csv")[,-1]
+all_dat = read.csv("\data quality check\\AD_newdat_0708.csv")[,-1]
 
 
 
