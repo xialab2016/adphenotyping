@@ -7,12 +7,12 @@ source("utility_20221127.R")
 ##      Create patient-level codified/utilization and nlp data 
 ##      Take log(x+1) of counts and save to "AD_pt_cod_data.Rdata"
 #############################################################################################
-data.dir = "/n/data1/hsph/biostat/celehs/lab/SHARE/UPMC/AD/data_table/"
-data = read.csv(paste0(data.dir, "data_processed/UPMC_AD_2011_to_2021_Codified+NLP_data_aggregated_2023-10-20.csv"))
+data.dir = "/your_working_directory/"
+data = read.csv(paste0(data.dir, "/Codified+NLP_data_aggregated.csv"))
 
 unq.features = unique(data$feature_id)
 
-freq = read.csv(paste0(data.dir, "data_summary/previous_versions/UPMC_AD_2011_to_2021_Codified+NLP_frequency_summary_with_desc_2023-03-15.csv"))
+freq = read.csv(paste0(data.dir, "/Codified+NLP_frequency_summary.csv"))
 features = c(freq[freq$freq.code > 5, "feature_id"], "AB0000AD")
 
 f.counts.patient = function(dat, v.date, v.nm){
@@ -38,11 +38,11 @@ save(d.pt.codnlp, file="/n/data1/hsph/biostat/celehs/lab/SHARE/UPMC/AD/data_tabl
 ##      Run KOMAP and get validation metrics
 #############################################################################################
 #------------------- Load data -------------------#
-load("/n/data1/hsph/biostat/celehs/lab/SHARE/UPMC/AD/data_table/data_processed/Lin/AD_pt_codnlp_data_10252023_uniq.Rdata")  #d.pt.codnlp
+load("AD_pt_codnlp_data_10252023_uniq.Rdata")  #d.pt.codnlp
 load("AD_label_data_chart_all.rda")  # d.label.new
 
 # Read in demographic data and create variable "white" and "female"
-demo = read.table("/n/data1/hsph/biostat/celehs/lab/SHARE/UPMC/AD/data_raw/ad_demographics.dsv", 
+demo = read.table("ad_demographics.dsv", 
                   header=T,
                   sep="\t", quote="")
 d = demo[,c("PATIENT_STUDY_ID", "RACE_TITLE", "ETHNIC_TITLE", "GENDER_CODE")]
