@@ -1,8 +1,7 @@
 # Leveraging electronic health records to examine differential clinical outcomes in people with Alzheimer’s Disease
 
-## Identifying AD populations using a novel AD diagnosis phenotyping algorithm 
+## Identifying AD populations using Knowledge driven Online Multimodal Automated Phenotyping (KOMAP)
 
-### Knowledge driven Online Multimodal Automated Phenotyping (KOMAP)
 #### See also: 
 #### https://pubmed.ncbi.nlm.nih.gov/37873131/
 #### https://github.com/xinxiong0238/KOMAP 
