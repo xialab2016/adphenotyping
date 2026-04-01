@@ -23,3 +23,8 @@ Code for combined analyses of both healthcare systems available in the Combined_
 ## Preprint
 
 https://www.medrxiv.org/content/10.1101/2025.04.22.25326230v1
+
+## DOI
+
+https://zenodo.org/badge/715205321.svg
+
