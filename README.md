@@ -26,5 +26,5 @@ https://www.medrxiv.org/content/10.1101/2025.04.22.25326230v1
 
 ## DOI
 
-https://zenodo.org/badge/715205321.svg
+[![DOI](https://zenodo.org/badge/715205321.svg)](https://doi.org/10.5281/zenodo.19370631)
 
